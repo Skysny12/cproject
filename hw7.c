@@ -1,6 +1,38 @@
-﻿빌드 시작...
-1>------ 빌드 시작: 프로젝트: c언어 10주차.c, 구성: Debug x64 ------
-1>포인터.c
-1>c언어 10주차.c.vcxproj -> C:\Users\jungw\source\repos\c언어 10주차.c\x64\Debug\c언어 10주차.c.exe
-========== 빌드: 1개 성공, 0개 실패, 0개 최신 상태, 0개 건너뜀 ==========
-========== 빌드이(가) 6:33 PM에 시작되었고 01.218 초이(가) 소요됨 ==========
+#include<stdio.h>
+
+int main(void) {
+	int arr1[6] = { 1, 2, 3, 4, 5, 6 };
+	int arr2[6] = { 7,8,9,10,11,12 };
+	int* ptr1 = &arr1[0];
+	int* ptr2 = &arr2[0];
+	int temp;
+	printf("arr1:");
+	for (int i = 0; i < 6; i++) {
+		printf("%d ", arr1[i]);
+	}
+	printf("\n");
+	printf("arr2:");
+	for (int i = 0; i < 6; i++) {
+		printf("%d ", arr2[i]);
+	}
+	printf("\n");
+	for (int i = 0; i < 6; i++) {
+		temp = *ptr1;
+		*ptr1 = *ptr2;
+		*ptr2 = temp;
+		ptr1++;
+		ptr2++;
+	}
+
+	printf("after swap\n");
+	printf("arr1:");
+	for (int i = 0; i < 6; i++) {
+		printf("%d ", arr1[i]);
+	}
+	printf("\n");
+	printf("arr2:");
+	for (int i = 0; i < 6; i++) {
+		printf("%d ", arr2[i]);
+	}
+	return 0;
+}
